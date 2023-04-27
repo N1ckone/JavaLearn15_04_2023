@@ -106,8 +106,11 @@ public class HomeWork2 {
         Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2 (на два влево) ->
         [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете выбирать сами. */
 
-        int[] arr3 = {1,2,3};
-        move(arr3, 1);
+        int[] arr3 = {1,2,3, 4, 5, 6};
+        move(arr3, 2);
+        System.out.println(Arrays.toString(arr3)); //[5, 6, 1, 2, 3, 4]
+        move(arr3, -2);
+        System.out.println(Arrays.toString(arr3)); //[1, 2, 3, 4, 5, 6]
 
 
 
@@ -139,7 +142,12 @@ public class HomeWork2 {
 
     private static void moveOnRight(int[] arr, int index) {
         for (int i = 0; i < index; i++) {
-            for (int j = 0; j < arr.length; j++) {
+            int lastElement = arr[arr.length - 1];
+            for (int j = arr.length - 1; j >= 0; j--) {
+                if(j == 0) {
+                    arr[j] = lastElement;
+                } else
+                    arr[j] = arr[j - 1];
 
 
             }
@@ -147,6 +155,14 @@ public class HomeWork2 {
     }
 
     private static void moveOnLeft(int[] arr, int index) {
-
+        for (int i = 0; i < (index * -1); i++) {
+            int firstElement = arr[0];
+            for (int j = 0; j < arr.length; j++) {
+                if(j == arr.length - 1) {
+                    arr[j] = firstElement;
+                } else
+                    arr[j] = arr[j + 1];
+            }
+        }
     }
 }
