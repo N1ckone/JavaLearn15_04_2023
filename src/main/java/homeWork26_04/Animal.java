@@ -1,6 +1,8 @@
 package homeWork26_04;
 
-public abstract class Animal {
+import java.util.Objects;
+
+public abstract class Animal implements Cloneable {
 
     private String name;
     private int distanceRunLimit;
@@ -44,5 +46,35 @@ public abstract class Animal {
 
     public int getDistanceSwimLimit() {
         return distanceSwimLimit;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Animal animal = (Animal) o;
+
+        if (distanceRunLimit != animal.distanceRunLimit) return false;
+        if (Double.compare(animal.heightJumpLimit, heightJumpLimit) != 0) return false;
+        if (distanceSwimLimit != animal.distanceSwimLimit) return false;
+        return Objects.equals(name, animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + distanceRunLimit;
+        temp = Double.doubleToLongBits(heightJumpLimit);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + distanceSwimLimit;
+        return result;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

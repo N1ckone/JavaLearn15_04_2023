@@ -1,5 +1,7 @@
 package homeWork26_04;
 
+import lombok.NonNull;
+
 public class Cat extends Animal {
 
     public Cat(String name) {

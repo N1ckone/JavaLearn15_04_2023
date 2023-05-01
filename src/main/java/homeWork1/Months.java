@@ -1,3 +1,5 @@
+package homeWork1;
+
 public enum Months {
     JANUARY,
     FEBRUARY,

@@ -1,6 +1,10 @@
 package homeWork26_04;
 
-public class Employee {
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
+public class Employee  {
 
     private String name;
     private String position;
@@ -54,4 +58,6 @@ public class Employee {
                 ", зарплата= " + salary +
                 ", возраст= " + age;
     }
+
+
 }

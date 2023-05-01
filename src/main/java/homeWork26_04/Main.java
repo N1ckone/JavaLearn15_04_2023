@@ -1,7 +1,7 @@
 package homeWork26_04;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         // ДЗ 3
         Employee[] employees = new Employee[5];
@@ -64,6 +64,36 @@ public class Main {
         cat2.run(200);
         cat2.swim(100);
         cat2.jump(2);
+
+        //ДЗ 5
+
+        System.out.println("________________________________");
+        Animal cloneDog = (Dog) dog.clone();
+        System.out.println(dog.equals(cloneDog)); //true. Без реализации - false
+        System.out.println(dog.hashCode()); //Одинаковые. Без реализации - разные
+        System.out.println(cloneDog.hashCode()); //Одинаковые. Без реализации -разные
+
+
+        System.out.println("_________________________________");
+        Employee worker1 = new Employee(
+                "Алексей", "Юрист",
+                "alex@it.com", "+7-999-999-99-99",
+                120000, 35);
+        Employee worker2 = new Employee(
+                "Алексей", "Юрист",
+                "alex@it.com", "+7-999-999-99-99",
+                120000, 35);
+
+        System.out.println(worker1.equals(worker2)); //true. Без lombok - false
+        System.out.println(worker1.hashCode()); //1726989102. без lombok - 1323165413
+        System.out.println(worker2.hashCode()); //1726989102. без lombok - 1880587981
+
+
+        System.out.println(Mask.getMask(1244)); //00001244
+
+
+
+
 
     }
 }
