@@ -26,6 +26,9 @@ public class Dog extends Animal{
         boolean isDogReadyToJump = height < getHeightJumpLimit();
         System.out.println(isDogReadyToJump);
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 }

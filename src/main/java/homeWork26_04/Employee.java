@@ -1,10 +1,14 @@
 package homeWork26_04;
 
+<<<<<<< HEAD
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
 public class Employee  {
+=======
+public class Employee {
+>>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 
     private String name;
     private String position;
@@ -58,6 +62,9 @@ public class Employee  {
                 ", зарплата= " + salary +
                 ", возраст= " + age;
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 }

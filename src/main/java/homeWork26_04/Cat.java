@@ -1,7 +1,10 @@
 package homeWork26_04;
 
+<<<<<<< HEAD
 import lombok.NonNull;
 
+=======
+>>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 public class Cat extends Animal {
 
     public Cat(String name) {
