@@ -1,11 +1,7 @@
 package homeWork26_04;
 
 public class Main {
-<<<<<<< HEAD
     public static void main(String[] args) throws CloneNotSupportedException {
-=======
-    public static void main(String[] args) {
->>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 
         // ДЗ 3
         Employee[] employees = new Employee[5];
@@ -69,7 +65,6 @@ public class Main {
         cat2.swim(100);
         cat2.jump(2);
 
-<<<<<<< HEAD
         //ДЗ 5
 
         System.out.println("________________________________");
@@ -100,7 +95,5 @@ public class Main {
 
 
 
-=======
->>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
     }
 }

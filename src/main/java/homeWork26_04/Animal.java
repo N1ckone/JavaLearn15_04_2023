@@ -1,12 +1,8 @@
 package homeWork26_04;
 
-<<<<<<< HEAD
 import java.util.Objects;
 
 public abstract class Animal implements Cloneable {
-=======
-public abstract class Animal {
->>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 
     private String name;
     private int distanceRunLimit;
@@ -51,7 +47,6 @@ public abstract class Animal {
     public int getDistanceSwimLimit() {
         return distanceSwimLimit;
     }
-<<<<<<< HEAD
 
     @Override
     public boolean equals(Object o) {
@@ -82,6 +77,4 @@ public abstract class Animal {
     protected Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-=======
->>>>>>> 96998974014d7e4c7cf615e92ce1b4ef174d3362
 }
