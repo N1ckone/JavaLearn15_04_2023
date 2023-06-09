@@ -40,4 +40,5 @@ public class Box {
     public boolean compare(Box box) {
         return getWeight() == box.getWeight();
     }
+
 }
