@@ -7,24 +7,24 @@ public class Box {
     private List<Fruit> fruits = new ArrayList<>();
 
     public void addFruit(Fruit fruit) {
-        if(fruits.size() == 0) {
+        if (fruits.isEmpty()) {
             fruits.add(fruit);
         } else {
-            if(fruits.get(0) instanceof Apple && fruit instanceof Apple) {
+            if (fruits.get(0) instanceof Apple && fruit instanceof Apple) {
                 fruits.add(fruit);
-            } else if(fruits.get(0) instanceof Orange && fruit instanceof Orange) {
+            } else if (fruits.get(0) instanceof Orange && fruit instanceof Orange) {
                 fruits.add(fruit);
             } else {
-                throw new RuntimeException("Коробка состоит из " +fruits.get(0).getClass().getSimpleName()
-                        + ". Поптыка добавить " + fruit.getClass().getSimpleName());
+                throw new RuntimeException("Коробка состоит из " + fruits.get(0).getClass().getSimpleName()
+                        + ". Попытка добавить " + fruit.getClass().getSimpleName());
             }
         }
     }
 
     public float getWeight() {
-       float count = 0;
+        float count = 0;
         for (Fruit fruit : fruits) {
-            count+= fruit.getWeight();
+            count += fruit.getWeight();
         }
         return count;
     }
@@ -33,12 +33,10 @@ public class Box {
         for (Fruit fruit : fruits) {
             other.addFruit(fruit);
         }
-        List<Fruit> empty = new ArrayList<>();
-        fruits = empty;
+        fruits.clear();
     }
 
     public boolean compare(Box box) {
         return getWeight() == box.getWeight();
     }
-
 }
