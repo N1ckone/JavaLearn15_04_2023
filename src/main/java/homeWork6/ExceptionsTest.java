@@ -10,40 +10,37 @@ public class ExceptionsTest {
             }
         }
         //strings[2][3] = "Привет"; //с этой строкой будет исключение
+        int sum = 0;
         try {
-           int sum = checkSizeArrayParseAndSum(strings);
-           System.out.println(sum);
+            sum = checkSizeArrayParseAndSum(strings);
         } catch (MyArraySizeException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.fillInStackTrace());
         } catch (MyArrayDataException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.fillInStackTrace());
         }
-
+        System.out.println(sum);
     }
 
     public static int checkSizeArrayParseAndSum(String[][] arr) throws MyArraySizeException, MyArrayDataException {
-        if(arr.length == 4) {
+        if (arr.length == 4) {
             int sum = 0;
             for (int i = 0; i < arr.length; i++) {
-                if(arr[i].length != 4) {
+                if (arr[i].length != 4) {
                     throw new MyArraySizeException("Метод принимает только двумерный массив размера [4][4]");
                 }
                 for (int j = 0; j < arr.length; j++) {
-                   try {
-                       int num = Integer.parseInt(arr[i][j]);
-                       sum += num;
-                   }catch (NumberFormatException e) {
-                       throw new MyArrayDataException(
-                               String.format(
-                               "Неверные данные. Ошибка произошла в ячейке [%d][%d]", i, j));
-                   }
+                    try {
+                        int num = Integer.parseInt(arr[i][j]);
+                        sum += num;
+                    } catch (NumberFormatException e) {
+                        throw new MyArrayDataException(
+                                String.format("Неверные данные. Ошибка произошла в ячейке [%d][%d]", i, j));
+                    }
                 }
-
             }
             return sum;
         } else {
             throw new MyArraySizeException("Метод принимает только двумерный массив размера [4][4]");
         }
     }
-
 }
